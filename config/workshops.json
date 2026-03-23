@@ -1,0 +1,27 @@
+[
+  {
+    "id": "ws01",
+    "title": "Workshop 01 - Web Development Basics",
+    "repo": "Laurea-FullStack-2026/Workshop01_Web-development-basics"
+  },
+  {
+    "id": "ws02",
+    "title": "Workshop 02 - Node.js Solution",
+    "repo": "Laurea-FullStack-2026/Workshop02_Nodejs_Solution"
+  },
+  {
+    "id": "ws03",
+    "title": "Workshop 03 - Express Solution",
+    "repo": "Laurea-FullStack-2026/Workshop03_Express_Solution"
+  },
+  {
+    "id": "ws04",
+    "title": "Workshop 04 - MongoDB",
+    "repo": "Laurea-FullStack-2026/Workshop04_Mongodb"
+  },
+  {
+    "id": "ws05",
+    "title": "Workshop 05 - REST API",
+    "repo": "Laurea-FullStack-2026/WS05_REST_API"
+  }
+]

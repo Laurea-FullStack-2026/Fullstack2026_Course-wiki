@@ -1,0 +1,43 @@
+name: Wiki Sync
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 18 * * 1-5'
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Run wiki sync
+        run: python scripts/sync_wiki.py
+
+      - name: Upload sync report
+        uses: actions/upload-artifact@v4
+        with:
+          name: wiki-sync-report
+          path: sync-report.json
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md workshops sync-report.json
+          if git diff --cached --quiet; then
+            echo "No wiki changes to commit"
+          else
+            git commit -m "chore: sync wiki content"
+            git push
+          fi
