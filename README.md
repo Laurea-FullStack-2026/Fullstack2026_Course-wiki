@@ -25,6 +25,7 @@ Wiki content is synchronized by GitHub Actions using [scripts/sync_wiki.py](scri
 
 - Workflow file: [.github/workflows/wiki-sync.yml](.github/workflows/wiki-sync.yml)
 - Source repository list: [config/workshops.json](config/workshops.json)
+- Release and tag strategy: [docs/release-tag-strategy.md](docs/release-tag-strategy.md)
 
 ### Trigger Options
 
@@ -59,3 +60,7 @@ python scripts/sync_wiki.py
 
 - If a source repository is unavailable, existing wiki files remain and the status is recorded as error/partial in generated pages and report.
 - Relative links in imported README content are rewritten to absolute GitHub links.
+
+## Versioning
+
+Use the sync milestone release/tag policy in [docs/release-tag-strategy.md](docs/release-tag-strategy.md).
