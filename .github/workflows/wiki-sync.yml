@@ -22,6 +22,8 @@ jobs:
           python-version: '3.12'
 
       - name: Run wiki sync
+        env:
+          WIKI_SYNC_TOKEN: ${{ secrets.WIKI_SYNC_TOKEN }}
         run: python scripts/sync_wiki.py
 
       - name: Upload sync report

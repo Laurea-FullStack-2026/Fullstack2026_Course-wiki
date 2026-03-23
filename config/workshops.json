@@ -7,12 +7,12 @@
   {
     "id": "ws02",
     "title": "Workshop 02 - Node.js Solution",
-    "repo": "Laurea-FullStack-2026/Workshop02_Nodejs_Solution"
+    "repo": "Laurea-FullStack-2026/Workshop02_Nodejs"
   },
   {
     "id": "ws03",
     "title": "Workshop 03 - Express Solution",
-    "repo": "Laurea-FullStack-2026/Workshop03_Express_Solution"
+    "repo": "Laurea-FullStack-2026/Workshop03_Express"
   },
   {
     "id": "ws04",
@@ -22,6 +22,7 @@
   {
     "id": "ws05",
     "title": "Workshop 05 - REST API",
-    "repo": "Laurea-FullStack-2026/WS05_REST_API"
+    "repo": "Laurea-FullStack-2026/WS05_REST_API",
+    "private": true
   }
 ]

@@ -4,11 +4,12 @@
 from __future__ import annotations
 
 import json
+import os
 import re
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import Dict, List, Optional, Tuple
+from typing import Any, Dict, List, Optional, Tuple
 from urllib.error import HTTPError, URLError
 from urllib.request import Request, urlopen
 
@@ -19,6 +20,7 @@ SYNC_REPORT_PATH = ROOT / "sync-report.json"
 
 GITHUB_API = "https://api.github.com"
 GITHUB_WEB = "https://github.com"
+GITHUB_TOKEN = os.getenv("WIKI_SYNC_TOKEN") or os.getenv("GITHUB_TOKEN")
 
 SECTION_BUCKETS = {
     "setup": ["prerequisite", "getting started", "setup", "installation"],
@@ -28,18 +30,25 @@ SECTION_BUCKETS = {
 }
 
 
-def load_workshops() -> List[Dict[str, str]]:
+def load_workshops() -> List[Dict[str, Any]]:
     with CONFIG_PATH.open("r", encoding="utf-8") as handle:
         return json.load(handle)
+
+
+def github_headers(accept: str) -> Dict[str, str]:
+    headers = {
+        "User-Agent": "fullstack2026-course-wiki-sync",
+        "Accept": accept,
+    }
+    if GITHUB_TOKEN:
+        headers["Authorization"] = f"Bearer {GITHUB_TOKEN}"
+    return headers
 
 
 def github_get_json(path: str) -> Tuple[Optional[Dict], Optional[str]]:
     req = Request(
         f"{GITHUB_API}{path}",
-        headers={
-            "User-Agent": "fullstack2026-course-wiki-sync",
-            "Accept": "application/vnd.github+json",
-        },
+        headers=github_headers("application/vnd.github+json"),
     )
     try:
         with urlopen(req, timeout=30) as response:
@@ -54,10 +63,7 @@ def github_get_json(path: str) -> Tuple[Optional[Dict], Optional[str]]:
 def github_get_text(path: str, accept: str) -> Tuple[Optional[str], Optional[str]]:
     req = Request(
         f"{GITHUB_API}{path}",
-        headers={
-            "User-Agent": "fullstack2026-course-wiki-sync",
-            "Accept": accept,
-        },
+        headers=github_headers(accept),
     )
     try:
         with urlopen(req, timeout=30) as response:
@@ -138,7 +144,7 @@ def workshop_page_path(workshop_id: str) -> Path:
     return WORKSHOPS_DIR / f"{workshop_id}.md"
 
 
-def write_workshop_page(workshop: Dict[str, str], data: Dict[str, str]) -> None:
+def write_workshop_page(workshop: Dict[str, Any], data: Dict[str, str]) -> None:
     path = workshop_page_path(workshop["id"])
     path.parent.mkdir(parents=True, exist_ok=True)
     content = f"""# {workshop['title']}
@@ -220,18 +226,25 @@ def build_report(results: List[Dict[str, str]], generated_at: str) -> None:
     SYNC_REPORT_PATH.write_text(json.dumps(report, indent=2), encoding="utf-8")
 
 
-def fetch_workshop_data(workshop: Dict[str, str], generated_at: str) -> Dict[str, str]:
+def fetch_workshop_data(workshop: Dict[str, Any], generated_at: str) -> Dict[str, str]:
     repo = workshop["repo"]
     repo_data, repo_error = github_get_json(f"/repos/{repo}")
 
     if repo_error or not repo_data:
+        private_repo = bool(workshop.get("private"))
+        private_without_token = private_repo and repo_error == "HTTP 404" and not GITHUB_TOKEN
+        status = f"error ({repo_error or 'unknown'})"
+        summary = "Repository metadata could not be fetched."
+        if private_without_token:
+            status = "error (private repository, token required)"
+            summary = "Repository is private. Set WIKI_SYNC_TOKEN (or GITHUB_TOKEN) with read access."
         return {
             "id": workshop["id"],
             "title": workshop["title"],
             "repo": repo,
-            "status": f"error ({repo_error or 'unknown'})",
+            "status": status,
             "synced_at": generated_at,
-            "summary": "Repository metadata could not be fetched.",
+            "summary": summary,
             "readme": "_README unavailable due to repository access error._",
         }
 

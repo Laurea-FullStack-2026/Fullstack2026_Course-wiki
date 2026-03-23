@@ -5,8 +5,8 @@ This repository is the central wiki for Fullstack 2026 workshop materials.
 It aggregates and normalizes documentation from five workshop repositories:
 
 1. https://github.com/Laurea-FullStack-2026/Workshop01_Web-development-basics
-2. https://github.com/Laurea-FullStack-2026/Workshop02_Nodejs_Solution
-3. https://github.com/Laurea-FullStack-2026/Workshop03_Express_Solution
+2. https://github.com/Laurea-FullStack-2026/Workshop02_Nodejs
+3. https://github.com/Laurea-FullStack-2026/Workshop03_Express
 4. https://github.com/Laurea-FullStack-2026/Workshop04_Mongodb
 5. https://github.com/Laurea-FullStack-2026/WS05_REST_API
 
@@ -30,6 +30,16 @@ Wiki content is synchronized by GitHub Actions using [scripts/sync_wiki.py](scri
 
 1. Manual: GitHub Actions workflow dispatch
 2. Scheduled: Weekdays at 18:00 UTC
+
+### Private Repository Access (Workshop 05)
+
+Workshop 05 is currently private. To sync private repository content before it becomes public:
+
+1. Create a Personal Access Token with repository read access.
+2. Add repository secret `WIKI_SYNC_TOKEN` in this wiki repository settings.
+3. Run the Wiki Sync workflow manually or wait for scheduled execution.
+
+The sync script automatically uses `WIKI_SYNC_TOKEN` (or `GITHUB_TOKEN` if provided) for GitHub API access.
 
 ### Sync Output
 
