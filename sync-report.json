@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-03-23T18:17:36+00:00",
+  "generatedAt": "2026-03-24T18:27:16+00:00",
   "results": [
     {
       "id": "ws01",
       "title": "Workshop 01 - Web Development Basics",
       "repo": "Laurea-FullStack-2026/Workshop01_Web-development-basics",
       "status": "ok",
-      "synced_at": "2026-03-23T18:17:36+00:00",
+      "synced_at": "2026-03-24T18:27:16+00:00",
       "branch": "main",
       "sha": "60be3027751535632fd23175ff89725c65c9e827",
       "summary": "Welcome to your first web development workshop! In this workshop, you'll learn the fundamentals of HTML, CSS, and responsive design by completing 5 hands-on tasks.",
@@ -21,7 +21,7 @@
       "title": "Workshop 02 - Node.js Solution",
       "repo": "Laurea-FullStack-2026/Workshop02_Nodejs",
       "status": "ok",
-      "synced_at": "2026-03-23T18:17:36+00:00",
+      "synced_at": "2026-03-24T18:27:16+00:00",
       "branch": "main",
       "sha": "60b6f70ddfb38ebd2820e1886a6731b422abd34b",
       "summary": "This workshop focuses on **practical understanding** of how web servers work at a fundamental level.",
@@ -36,7 +36,7 @@
       "title": "Workshop 03 - Express Solution",
       "repo": "Laurea-FullStack-2026/Workshop03_Express",
       "status": "ok",
-      "synced_at": "2026-03-23T18:17:36+00:00",
+      "synced_at": "2026-03-24T18:27:16+00:00",
       "branch": "main",
       "sha": "2bd53d6ac4e15b146a5f20095f89a60748b1061d",
       "summary": "This workshop focuses on **practical understanding** of how Express simplifies web server development compared to using Node.js's built-in HTTP module.",
@@ -51,7 +51,7 @@
       "title": "Workshop 04 - MongoDB",
       "repo": "Laurea-FullStack-2026/Workshop04_Mongodb",
       "status": "ok",
-      "synced_at": "2026-03-23T18:17:36+00:00",
+      "synced_at": "2026-03-24T18:27:16+00:00",
       "branch": "main",
       "sha": "5a5540b1134b91bec1906931bf7d1502d379055e",
       "summary": "Your task is to complete the self-directed learning material at https://learn.mongodb.com/learn/learning-path/introduction-to-mongodb and submit proof of completion or a copy of your certification badge.",
@@ -66,7 +66,7 @@
       "title": "Workshop 05 - REST API",
       "repo": "Laurea-FullStack-2026/WS05_REST_API",
       "status": "error (private repository, token required)",
-      "synced_at": "2026-03-23T18:17:36+00:00",
+      "synced_at": "2026-03-24T18:27:16+00:00",
       "summary": "Repository is private. Set WIKI_SYNC_TOKEN (or GITHUB_TOKEN) with read access.",
       "readme": "_README unavailable due to repository access error._"
     }
