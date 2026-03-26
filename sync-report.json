@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-03-25T18:26:35+00:00",
+  "generatedAt": "2026-03-26T18:29:03+00:00",
   "results": [
     {
       "id": "ws01",
       "title": "Workshop 01 - Web Development Basics",
       "repo": "Laurea-FullStack-2026/Workshop01_Web-development-basics",
       "status": "ok",
-      "synced_at": "2026-03-25T18:26:35+00:00",
+      "synced_at": "2026-03-26T18:29:03+00:00",
       "branch": "main",
       "sha": "60be3027751535632fd23175ff89725c65c9e827",
       "summary": "Welcome to your first web development workshop! In this workshop, you'll learn the fundamentals of HTML, CSS, and responsive design by completing 5 hands-on tasks.",
@@ -21,7 +21,7 @@
       "title": "Workshop 02 - Node.js Solution",
       "repo": "Laurea-FullStack-2026/Workshop02_Nodejs",
       "status": "ok",
-      "synced_at": "2026-03-25T18:26:35+00:00",
+      "synced_at": "2026-03-26T18:29:03+00:00",
       "branch": "main",
       "sha": "60b6f70ddfb38ebd2820e1886a6731b422abd34b",
       "summary": "This workshop focuses on **practical understanding** of how web servers work at a fundamental level.",
@@ -36,7 +36,7 @@
       "title": "Workshop 03 - Express Solution",
       "repo": "Laurea-FullStack-2026/Workshop03_Express",
       "status": "ok",
-      "synced_at": "2026-03-25T18:26:35+00:00",
+      "synced_at": "2026-03-26T18:29:03+00:00",
       "branch": "main",
       "sha": "2bd53d6ac4e15b146a5f20095f89a60748b1061d",
       "summary": "This workshop focuses on **practical understanding** of how Express simplifies web server development compared to using Node.js's built-in HTTP module.",
@@ -51,7 +51,7 @@
       "title": "Workshop 04 - MongoDB",
       "repo": "Laurea-FullStack-2026/Workshop04_Mongodb",
       "status": "ok",
-      "synced_at": "2026-03-25T18:26:35+00:00",
+      "synced_at": "2026-03-26T18:29:03+00:00",
       "branch": "main",
       "sha": "5a5540b1134b91bec1906931bf7d1502d379055e",
       "summary": "Your task is to complete the self-directed learning material at https://learn.mongodb.com/learn/learning-path/introduction-to-mongodb and submit proof of completion or a copy of your certification badge.",
@@ -65,10 +65,16 @@
       "id": "ws05",
       "title": "Workshop 05 - REST API",
       "repo": "Laurea-FullStack-2026/WS05_REST_API",
-      "status": "error (private repository, token required)",
-      "synced_at": "2026-03-25T18:26:35+00:00",
-      "summary": "Repository is private. Set WIKI_SYNC_TOKEN (or GITHUB_TOKEN) with read access.",
-      "readme": "_README unavailable due to repository access error._"
+      "status": "ok",
+      "synced_at": "2026-03-26T18:29:03+00:00",
+      "branch": "main",
+      "sha": "5a2f90c01b0fc0dfd132be1d94e4ad45a63a3775",
+      "summary": "Before starting, prepare your repository workspace:\n- Remove unnecessary content/files from the repository.\n- Copy the full content of this `starter/` folder to the repository root.\n- Continue the exercise from the repository root after the copy.",
+      "setup": "Not available in source README.",
+      "tasks": "### Exercise Context\n\nThis exercise expands the previous exercises from this FullStack course. In this exercise, students will create a REST API to handle blog postings.\nThe student tasks are embedded directly into these files as TODOs:\n- `server.js`\n- `models/Post.js` (Model.js task)\n- `routes/pages.js`\n- `routes/posts.js`\n\n### Server.Js Task (`Connecttodatabase`)\n\nIn `server.js`, complete the `connectToDatabase` function so the app connects to MongoDB before starting the server.\n\n### Model Task (`Models/Post.Js`)\n\nIn the model task, students must complete the `postSchema` definition for MongoDB using Mongoose. Define the post fields (`title`, `content`, `author`) with suitable validation rules (for example: `String`, `required: true`, and `trim: true`). Keep `timestamps: true` enabled so each document gets `createdAt` and `updatedAt` automatically. When this model is complete, the API routes can use it for create/read/update/delete operations and validation errors will be returned correctly during `POST` and `PUT` requests.\n\n\n\nImplementation checklist:\n- Verify that `process.env.MONGODB_URI` exists. If missing, show a clear warning/error.\n- Call `mongoose.connect(process.env.MONGODB_URI, { dbName: 'blog' })`.\n- Log a success message when the connection is established.\n- Handle connection failures with `try/catch` and log the error message.\n- Keep server startup behind `connectToDatabase().then(...)` so routes run after the connection step.",
+      "testing": "### Suggested Test Body\n\nUse Postman to test all API routes after implementing the TODOs.\n\nRecommended order in Postman:\n1. `POST /api/posts` (create)\n2. `GET /api/posts` (list)\n3. `GET /api/posts/:id` (single)\n4. `PUT /api/posts/:id` (update)\n5. `DELETE /api/posts/:id` (remove)\n\nSave the `_id` returned by `POST` and reuse it in `GET/PUT/DELETE` requests.",
+      "troubleshooting": "Not available in source README.",
+      "readme": "# Workshop 05 - Building a REST API with Express and MongoDB\n\n## Starter Notes\n\nBefore starting, prepare your repository workspace:\n- Remove unnecessary content/files from the repository.\n- Copy the full content of this `starter/` folder to the repository root.\n- Continue the exercise from the repository root after the copy.\n\n## Exercise Context\nThis exercise expands the previous exercises from this FullStack course. In this exercise, students will create a REST API to handle blog postings.\nThe student tasks are embedded directly into these files as TODOs:\n- `server.js`\n- `models/Post.js` (Model.js task)\n- `routes/pages.js`\n- `routes/posts.js`\n\n## server.js Task (`connectToDatabase`)\nIn `server.js`, complete the `connectToDatabase` function so the app connects to MongoDB before starting the server.\n\n## Model Task (`models/Post.js`)\nIn the model task, students must complete the `postSchema` definition for MongoDB using Mongoose. Define the post fields (`title`, `content`, `author`) with suitable validation rules (for example: `String`, `required: true`, and `trim: true`). Keep `timestamps: true` enabled so each document gets `createdAt` and `updatedAt` automatically. When this model is complete, the API routes can use it for create/read/update/delete operations and validation errors will be returned correctly during `POST` and `PUT` requests.\n\n\n\nImplementation checklist:\n- Verify that `process.env.MONGODB_URI` exists. If missing, show a clear warning/error.\n- Call `mongoose.connect(process.env.MONGODB_URI, { dbName: 'blog' })`.\n- Log a success message when the connection is established.\n- Handle connection failures with `try/catch` and log the error message.\n- Keep server startup behind `connectToDatabase().then(...)` so routes run after the connection step.\n\n## Quick Start\n1. Install dependencies with `npm install`\n2. Create `.env` from `.env.example`\n3. Start the server with `npm run dev`\n4. Open `server.js`, `models/Post.js`, `routes/pages.js`, and `routes/posts.js`\n5. Complete the TODO comments in order\n\n## Browser Routes\n- `GET /`\n   - Purpose: Serve the home page (`index.html`).\n   - Source file: `routes/pages.js`\n   - Expected result: HTTP `200` + HTML page.\n\n- `GET /about`\n   - Purpose: Serve the about page (`about.html`).\n   - Source file: `routes/pages.js`\n   - Expected result: HTTP `200` + HTML page.\n\n- `GET /contact`\n   - Purpose: Serve the contact page (`contact.html`).\n   - Source file: `routes/pages.js`\n   - Expected result: HTTP `200` + HTML page.\n\n- `GET /blog`\n   - Purpose: Serve the blog page (`blog.html`) where API usage is demonstrated.\n   - Source file: `routes/pages.js`\n   - Expected result: HTTP `200` + HTML page.\n\nIf a browser route does not match any page route, the app should return your `404.html` file.\n\n## API Routes\n- `POST /api/posts`\n   - Purpose: Create a new blog post document in MongoDB.\n   - Request body: JSON with `title`, `content`, `author`.\n   - Success: HTTP `201` + created post JSON.\n   - Common errors: HTTP `400` for validation errors.\n\n- `GET /api/posts`\n   - Purpose: Fetch all posts.\n   - Success: HTTP `200` + JSON array of posts.\n\n- `GET /api/posts/:id`\n   - Purpose: Fetch one post by MongoDB ObjectId.\n   - Success: HTTP `200` + post JSON.\n   - Common errors:\n      - HTTP `400` when `:id` is not a valid ObjectId format.\n      - HTTP `404` when no post exists with that id.\n\n- `PUT /api/posts/:id`\n   - Purpose: Replace/update one post by id.\n   - Request body: full post fields (`title`, `content`, `author`).\n   - Success: HTTP `200` + updated post JSON.\n   - Common errors:\n      - HTTP `400` invalid id or validation error.\n      - HTTP `404` post not found.\n\n- `DELETE /api/posts/:id`\n   - Purpose: Remove one post by id.\n   - Success: HTTP `200` + success message JSON.\n   - Common errors:\n      - HTTP `400` invalid id.\n      - HTTP `404` post not found.\n\nTip for testing: Start with `POST`, then copy the returned `_id` and use it in `GET /:id`, `PUT /:id`, and `DELETE /:id`.\n\n## Suggested Test Body\nUse Postman to test all API routes after implementing the TODOs.\n\nRecommended order in Postman:\n1. `POST /api/posts` (create)\n2. `GET /api/posts` (list)\n3. `GET /api/posts/:id` (single)\n4. `PUT /api/posts/:id` (update)\n5. `DELETE /api/posts/:id` (remove)\n\nSave the `_id` returned by `POST` and reuse it in `GET/PUT/DELETE` requests.\n\n### Create Post (`POST /api/posts`)\n```json\n{\n   \"title\": \"My First Blog Post\",\n   \"content\": \"This API stores blog posts in MongoDB.\",\n   \"author\": \"Student\"\n}\n```\n\n### Update Post (`PUT /api/posts/:id`)\n```json\n{\n   \"title\": \"My First Blog Post (Updated)\",\n   \"content\": \"Updated content from Postman test.\",\n   \"author\": \"Student\"\n}\n```\n\n### Invalid Body Example (expect `400`)\n```json\n{\n   \"title\": \"\",\n   \"content\": \"\",\n   \"author\": \"\"\n}\n```"
     }
   ]
 }
