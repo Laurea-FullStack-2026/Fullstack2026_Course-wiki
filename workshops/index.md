@@ -1,6 +1,6 @@
 # Workshop Index
 
-Generated at (UTC): 2026-04-01T18:26:16+00:00
+Generated at (UTC): 2026-04-02T18:25:34+00:00
 
 | Workshop | Repository | Status | Branch | Commit |
 |---|---|---|---|---|
@@ -8,4 +8,4 @@ Generated at (UTC): 2026-04-01T18:26:16+00:00
 | [Workshop 02 - Node.js Solution](ws02.md) | [Laurea-FullStack-2026/Workshop02_Nodejs](https://github.com/Laurea-FullStack-2026/Workshop02_Nodejs) | ok | main | 60b6f70ddfb3 |
 | [Workshop 03 - Express Solution](ws03.md) | [Laurea-FullStack-2026/Workshop03_Express](https://github.com/Laurea-FullStack-2026/Workshop03_Express) | ok | main | 2bd53d6ac4e1 |
 | [Workshop 04 - MongoDB](ws04.md) | [Laurea-FullStack-2026/Workshop04_Mongodb](https://github.com/Laurea-FullStack-2026/Workshop04_Mongodb) | ok | main | 5a5540b1134b |
-| [Workshop 05 - REST API](ws05.md) | [Laurea-FullStack-2026/WS05_REST_API](https://github.com/Laurea-FullStack-2026/WS05_REST_API) | ok | main | 5a2f90c01b0f |
+| [Workshop 05 - REST API](ws05.md) | [Laurea-FullStack-2026/WS05_REST_API](https://github.com/Laurea-FullStack-2026/WS05_REST_API) | ok | main | 235ab00d01b7 |
